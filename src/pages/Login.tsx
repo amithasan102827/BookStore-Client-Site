@@ -14,7 +14,6 @@ const Login = () => {
     const {
         register,
         handleSubmit,
-        // formState: { errors },
     } = useForm<LoginFormInputs>();
 
     const { user, isLoading } = useAppSelector((state) => state.user);
