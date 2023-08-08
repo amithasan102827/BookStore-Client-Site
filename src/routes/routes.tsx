@@ -6,6 +6,7 @@ import NotFound from '../pages/NotFound';
 import Singup from '../pages/Singup';
 import Login from '../pages/Login';
 import BooksDetails from '../pages/BooksDetails';
+import Checkout from '../pages/Checkout';
 
 const routes = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
                 path: '/book-details/:id',
                 element: <BooksDetails />,
             },
+            {
+                path: '/checkout',
+                element: <Checkout />,
+            },
         ],
     },
     {
@@ -34,6 +39,7 @@ const routes = createBrowserRouter([
         path: '/signup',
         element: <Singup />,
     },
+    
     {
         path: '*',
         element: <NotFound />,

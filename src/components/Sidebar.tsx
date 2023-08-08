@@ -1,5 +1,5 @@
 import React from 'react'
-import { IProduct } from '../../../types/globalTypes';
+// import { IProduct } from '../../../types/globalTypes';
 import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { addToCart, removeFromCart, removeOne } from '../redux/features/cart/cartSlice';
 
@@ -10,12 +10,6 @@ const Sidebar = () => {
     const dispatch = useAppDispatch();
     return (
         <div>
-            {/* <a className="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                Link with href
-            </a>
-            <button className="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                Button with data-bs-target
-            </button> */}
 
             <div className="offcanvas offcanvas-end" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div className="offcanvas-header">
@@ -23,18 +17,18 @@ const Sidebar = () => {
                     <button type="button" className="btn-close outline-none shadow-none me-2 text-dark" data-bs-dismiss="offcanvas" aria-label="Close"><i className="bi bi-x-square-fill fs-3"></i></button>
                 </div>
                 <div className="offcanvas-body">
-                    <div className="card mb-3">
-                        <div className="row g-4">
+                    <div className="card mb-3 border-0">
+                        
 
                             {products.map((product) => (
-                                <>
-                                    <div className="col-md-4 shadow-sm">
-                                        <img src={product?.image} className="img-fluid w-75 rounded-start" alt="..." />
+                                <div className="row mb-3 border rounded shadow-md ">
+                                    <div className="col-md-4 py-1">
+                                        <img src={product?.image} className="object-fill h-28 w-96 rounded-start" alt="..." />
                                     </div>
-                                    <div className="col-md-8 shadow-sm">
+                                    <div className="col-md-8 py-1">
                                         <div className="card-body d-flex justify-content-between align-items-center">
                                             <div>
-                                                <h5 className="card-title">{product.name}</h5>
+                                                <h5 className="card-title ">{(product.name).slice(0, 22)}</h5>
                                                 <small>Quantity:{product.quantity}</small>
                                                 <h6 className='mt-1'>Total Price:{(product.price * product.quantity!).toFixed(2)}{' '}
                                                     $</h6>
@@ -51,10 +45,10 @@ const Sidebar = () => {
 
                                         </div>
                                     </div>
-                                </>
+                                </div>
                             ))}
 
-                        </div>
+                        
                     </div>
                 </div>
             </div>

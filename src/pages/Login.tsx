@@ -39,7 +39,7 @@ const Login = () => {
             <div className="flex justify-center">
                 <div className="h-[90%] w-full md:w-3/4 m-4">
                     <div className="text-xl cursor-pointer flex flex-col justify-center items-center mt-5 md:mt-0">
-                        <h1 className="font-semibold text-3xl text-gray-700 m-2">Sign Up</h1>
+                        <h1 className="font-semibold text-3xl text-gray-700 m-2">Login</h1>
                         <div className="flex">
                             {/* icon */}
                         </div>
