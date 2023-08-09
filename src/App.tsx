@@ -1,16 +1,33 @@
 
+import { useEffect } from 'react'
 import './App.css'
-import Footer from './layouts/Footer'
 import MainLayout from './layouts/MainLayout'
-import Navbar from './layouts/Navbar'
-import Books from './pages/Books'
-import Home from './pages/Home'
+import { onAuthStateChanged } from 'firebase/auth'
+import { setLoading, setUser } from './redux/features/user/userSlice'
+import { auth } from './lib/firebase'
+import { useAppDispatch } from './redux/hook'
 
 function App() {
 
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(setLoading(true));
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(setUser(user.email!));
+        dispatch(setLoading(false));
+      } else {
+        dispatch(setLoading(false));
+      }
+    });
+  }, [dispatch]);
+
   return (
     <div>
-    <MainLayout></MainLayout>
+      <MainLayout></MainLayout>
     </div>
   )
 }

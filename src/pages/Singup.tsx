@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../redux/hook';
 import { createUser } from '../redux/features/user/userSlice';
-import { toast, ToastContainer } from 'react-toastify';
+// import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Toast from 'react-bootstrap/Toast';
+// import Toast from 'react-bootstrap/Toast';
 
 
 interface SignupFormInputs {
