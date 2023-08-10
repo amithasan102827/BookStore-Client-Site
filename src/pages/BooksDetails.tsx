@@ -120,7 +120,8 @@ const BooksDetails = () => {
                     </div>
 
 
-                    <div className="mt-5  bg-success">
+                    <div className="mt-5">
+                        <h2>Reviews:</h2>
                         {comments.map((comment: Comment) => (
                             <li key={comment.id}>{comment.comment}</li>
                         ))}
