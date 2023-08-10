@@ -55,7 +55,7 @@ const Navbar = () => {
                         <p className='position-absolute top-0 end-0  py-0 fw-semibold  rounded-circle'>{products.length}</p>
                     </a> */}
 
-                    <button type="button" className="btn bg-primary position-relative py-0 px-2" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <button type="button" className="btn bg-primary position-relative py-0 px-2" data-bs-toggle="offcanvas" ref="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                         <i className="bi bi-bag-check fs-4 text-white"></i>
                         <span className="position-absolute top-0 start-100 translate-middle py-0 px-2 bg-danger border border-light rounded-circle border-0 shadow-0">
                             <span className="p-0 fs-6 text-white ">{products.length}</span>
