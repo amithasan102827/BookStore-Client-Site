@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useGetCommentQuery, usePostCommentMutation, useSingleProductQuery } from '../redux/features/bookApi';
 import { useAppDispatch } from '../redux/hook';

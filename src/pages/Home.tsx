@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import hero from '../assets/images/hero-img.png';
 import {Books} from './Books';
 

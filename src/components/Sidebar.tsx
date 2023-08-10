@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 // import { IProduct } from '../../../types/globalTypes';
 import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { addToCart, removeFromCart, removeOne } from '../redux/features/cart/cartSlice';
