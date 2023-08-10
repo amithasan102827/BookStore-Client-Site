@@ -97,7 +97,7 @@ const Checkout = () => {
           </div>
 
           <div className="col-md-5 ">
-            <div className="border py-5 rounded shadow-md h-24 min-h-full w-4/5">
+            <div className="border py-5 rounded shadow-md h-24 min-h-full w-11/12">
               {products.map((product) => (
                 <>
                   <div className="row mb-3 w-96 mx-auto border rounded ">

@@ -6,24 +6,34 @@ import { addToCart } from '../redux/features/cart/cartSlice';
 import { IProduct } from '../types/globalTypes';
 
 
+interface Comment {
+    id: string;
+    comment: string;
+}
+
 const BooksDetails = () => {
     const { id } = useParams();
     const { data } = useSingleProductQuery(id);
-// 
+    
+    const dispatch = useAppDispatch();
+    // 
     const [inputValue, setInputValue] = useState<string>('');
 
-    const { bookReview } = useGetCommentQuery(id, {
+    const { data: comments, isLoading, isError } = useGetCommentQuery(id, {
         refetchOnMountOrArgChange: true,
         pollingInterval: 30000,
     });
 
-    const [postComment, { isLoading, isError, isSuccess }] =
+    const [postComment,] =
         usePostCommentMutation();
 
-    console.log(isLoading);
-    console.log(isError);
-    console.log(isSuccess);
+    if (isLoading) return <div>Loading...</div>;
 
+    if (isError) return <div>Error occurred while fetching comments</div>;
+
+    if (!comments) {
+        return <div>No comments available.</div>;
+    }
 
 
     const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -44,7 +54,6 @@ const BooksDetails = () => {
         setInputValue('');
     };
 
-    const dispatch = useAppDispatch();
 
     const handleAddProduct = (product: IProduct) => {
         dispatch(addToCart(product));
@@ -111,11 +120,9 @@ const BooksDetails = () => {
                     </div>
 
 
-                    <div className="mt-5 pt-5 bg-success">
-                        {bookReview?.map((comment:[]) => (
-                            <div  className="flex gap-3 items-center mb-5">
-                                <p className='text-danger'>{comment}</p>
-                            </div>
+                    <div className="mt-5  bg-success">
+                        {comments.map((comment: Comment) => (
+                            <li key={comment.id}>{comment.comment}</li>
                         ))}
                     </div>
 
